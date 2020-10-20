@@ -144,8 +144,7 @@
         {
             "type": "shell",
             "scripts": [
-                "{{template_dir}}/scripts/installers/bash-preexec.sh",
-                "cp {{template_dir}}/scripts/installers/bash-preexec-function.sh ${HOME}/.bash-preexec-function.sh"
+                "{{template_dir}}/scripts/installers/bash-preexec.sh"
             ],
             "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
         },
