@@ -1,5 +1,7 @@
 #!/bin/bash -e
+source $HELPER_SCRIPTS/os.sh
 
+preexec
 # before cleanup
 before=$(df / -Pm | awk 'NR==2{print $4}')
 

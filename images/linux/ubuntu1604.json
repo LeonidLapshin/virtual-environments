@@ -144,13 +144,6 @@
         {
             "type": "shell",
             "scripts": [
-                "{{template_dir}}/scripts/installers/bash-preexec.sh"
-            ],
-            "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
-        },
-        {
-            "type": "shell",
-            "scripts": [
                 "{{template_dir}}/scripts/installers/7-zip.sh",
                 "{{template_dir}}/scripts/installers/ansible.sh",
                 "{{template_dir}}/scripts/installers/azcopy.sh",
@@ -274,16 +267,6 @@
         },
         {
             "type": "shell",
-            "scripts": [
-                "{{template_dir}}/scripts/installers/bash-preexec.sh"
-            ],
-            "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
-        },
-        {
-            "type": "shell",
-            "pause_before": "30s",
-            "timeout": "10m",
-            "start_retry_timeout": "10s",
             "scripts": [
                 "{{template_dir}}/scripts/installers/homebrew-validate.sh"
             ],

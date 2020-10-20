@@ -3,6 +3,8 @@
 ##  File:  homebrew-validate.sh
 ##  Desc:  Validate the Homebrew can run after reboot without extra configuring
 ################################################################################
+source $HELPER_SCRIPTS/os.sh
+preexec
 
 # Validate the installation
 echo "Validate the Homebrew can run after reboot"
