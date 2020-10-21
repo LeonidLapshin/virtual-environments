@@ -27,11 +27,14 @@ function getOSVersionLabel
 function preexec
 {
     set +e
-
-    ps -aux
+    echo "==="
+    ps axjfecho "==="
     lsof /var/lib/apt/lists/lock
+    echo "==="
+    cat /var/lib/apt/lists/lock
+    echo "==="
 
-    APTPID=$(ps -ef  | grep "[a]pt" | awk '{ printf "%d ", $2 }')
+    APTPID=$(ps -ef  | grep "apt\|upg\|upd\|dpkg" | awk '{ printf "%d ", $2 }')
     if [[ ! -z "$APTPID" ]]
     then
         for ONEPID in "${APTPID[@]}"
@@ -45,20 +48,5 @@ function preexec
         echo "apt/apt-get is not running"
     fi
 
-    DPKGPID=$(ps -ef  | grep "[d]pkg" | awk '{ printf "%d ", $2 }')
-    if [[ ! -z "$DPKGPID" ]]
-    then
-        for ONEPID in "${DPKGPID[@]}"
-        do
-            echo "apt/apt-get is running"
-            lsof -p $ONEPID
-            cat /proc/$ONEPID/cmdline
-            ls /proc/$ONEPID/fd
-        done
-    else
-        echo "apt/apt-get is not running"
-    fi
-
     unset APTPID
-    unset DPKGPID
 }
