@@ -8,6 +8,9 @@
 # Source the helpers
 source $HELPER_SCRIPTS/etc-environment.sh
 
+# Fix the problem with brew destination folder
+export SUDO_ASKPASS=false
+
 # Install the Homebrew on Linux
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
