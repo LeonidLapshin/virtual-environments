@@ -25,3 +25,18 @@ chmod -R 777 $AGENT_TOOLSDIRECTORY
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
 # https://www.suse.com/support/kb/doc/?id=000016692
 echo 'vm.max_map_count=262144' | tee -a /etc/sysctl.conf
+
+# use ext4 parameters mentioned in https://github.com/actions/virtual-environments/issues/1939
+sed -i 's/ResourceDisk.MountOptions=None/ResourceDisk.MountOptions=data=writeback,commit=999999,barrier=0,nodiscard,relatime/g' /etc/waagent.conf
+
+# change swappiness from 90
+echo 'vm.swappiness=10' | tee -a /etc/sysctl.conf
+
+# grub settings
+mkdir -p /etc/default/grub.d
+
+# configure transparent hugepages (thp) to be used when opted in with "madvise" instead of enabling by default
+echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX transparent_hugepage=madvise"' >> /etc/default/grub.d/99-thp.cfg
+
+# configure default mount options for the root filesystem
+echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX rootflags=data=writeback,commit=999999,barrier=0,nodiscard,relatime"' >> /etc/default/grub.d/99-rootflags.cfg
