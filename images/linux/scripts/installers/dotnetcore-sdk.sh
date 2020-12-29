@@ -69,12 +69,10 @@ extract_dotnet_sdk() {
 export -f download_with_retries
 export -f extract_dotnet_sdk
 
-parallel --jobs 0 --halt soon,fail=1 \
+parallel --jobs 10 --halt soon,fail=1 \
     'url="https://dotnetcli.blob.core.windows.net/dotnet/Sdk/{}/dotnet-sdk-{}-linux-x64.tar.gz"; \
-    download_with_retries $url' ::: "${sortedSdks[@]}"
-
-parallel --jobs 0 --halt soon,fail=1 \
-    'name="./dotnet-sdk-{}-linux-x64.tar.gz"; \
+    name="./dotnet-sdk-{}-linux-x64.tar.gz"; \
+    download_with_retries $url; \
     extract_dotnet_sdk $name' ::: "${sortedSdks[@]}"
 
 # Smoke test each SDK
