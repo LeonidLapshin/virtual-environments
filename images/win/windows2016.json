@@ -163,8 +163,7 @@
                 "TOOLSET_JSON_PATH={{user `toolset_json_path`}}"
             ],
             "scripts": [
-                "{{ template_dir }}/scripts/Installers/Install-NET48.ps1",
-                "{{ template_dir }}/scripts/Installers/Windows2016/Install-SSDT.ps1"
+                "{{ template_dir }}/scripts/Installers/Install-NET48.ps1"
             ],
             "elevated_user": "{{user `install_user`}}",
             "elevated_password": "{{user `install_password`}}"
