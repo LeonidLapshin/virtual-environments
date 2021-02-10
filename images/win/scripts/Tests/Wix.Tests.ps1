@@ -21,3 +21,4 @@ Describe "Wix" {
       $exVersion | Should -Not -BeNullOrEmpty
     }
 }
+

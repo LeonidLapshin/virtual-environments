@@ -94,23 +94,6 @@ Describe "Mercurial" {
     }
 }
 
-Describe "KubernetesTools" {
-    It "Kind" {
-        "kind version" | Should -ReturnZeroExitCode
-    }
-
-    It "kubectl" {
-        "kubectl version --client=true --short=true" | Should -ReturnZeroExitCode
-    }
-
-    It "Helm" {
-        "helm version --short" | Should -ReturnZeroExitCode
-    }
-
-    It "minikube" {
-        "minikube version --short" | Should -ReturnZeroExitCode
-    }
-}
 
 Describe "Mingw64" {
     It "<ToolName>" -TestCases @(
