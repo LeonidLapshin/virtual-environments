@@ -174,7 +174,6 @@
             "scripts": [
                 "{{ template_dir }}/scripts/Installers/Update-DockerImages.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-KubernetesTools.ps1",
-                "{{ template_dir }}/scripts/Installers/Install-VS.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-NET48.ps1"
             ],
             "elevated_user": "{{user `install_user`}}",
@@ -287,7 +286,6 @@
                 "{{ template_dir }}/scripts/Installers/Install-DACFx.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-MysqlCli.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-SQLPowerShellTools.ps1",
-                "{{ template_dir }}/scripts/Installers/Install-DotnetSDK.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Mingw64.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-TypeScript.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Haskell.ps1",
