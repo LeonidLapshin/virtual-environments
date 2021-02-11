@@ -1,1 +1,1 @@
-Invoke-PesterTests "*"
+Invoke-PesterTests -TestFile "MSYS2"
