@@ -220,7 +220,6 @@
                 "{{ template_dir }}/scripts/Installers/Install-PyPy.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Toolset.ps1",
                 "{{ template_dir }}/scripts/Installers/Configure-Toolset.ps1",
-                "{{ template_dir }}/scripts/Installers/Update-AndroidSDK.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Pipx.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-PipxPackages.ps1"
             ]
@@ -237,11 +236,6 @@
                 "{{ template_dir }}/scripts/Installers/Install-Rust.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Julia.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Svn.ps1",
-                "{{ template_dir }}/scripts/Installers/Install-Chrome.ps1",
-                "{{ template_dir }}/scripts/Installers/Install-Edge.ps1",
-                "{{ template_dir }}/scripts/Installers/Install-Firefox.ps1",
-                "{{ template_dir }}/scripts/Installers/Install-Selenium.ps1",
-                "{{ template_dir }}/scripts/Installers/Install-IEWebDriver.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Apache.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Nginx.ps1"
             ]
@@ -276,7 +270,6 @@
                 "TOOLSET_JSON_PATH={{user `toolset_json_path`}}"
             ],
             "scripts": [
-                "{{ template_dir }}/scripts/Installers/Install-VSWhere.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-WinAppDriver.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-Cmake.ps1",
                 "{{ template_dir }}/scripts/Installers/Install-R.ps1",

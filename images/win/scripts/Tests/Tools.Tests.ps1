@@ -218,12 +218,6 @@ Describe "Vcpkg" {
     }
 }
 
-Describe "VSWhere" {
-    It "vswhere" {
-        "vswhere" | Should -ReturnZeroExitCode
-    }
-}
-
 Describe "WebPlatformInstaller" {
     It "WebPlatformInstaller" {
         "WebPICMD" | Should -ReturnZeroExitCode
