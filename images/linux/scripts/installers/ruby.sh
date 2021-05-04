@@ -8,6 +8,7 @@ source $HELPER_SCRIPTS/install.sh
 
 apt-get install ruby-full
 gem update
+gem install rdoc
 
 # Install ruby gems from toolset
 gemsToInstall=$(get_toolset_value ".rubygems[] .name")
